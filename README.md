@@ -2,7 +2,7 @@
 Unofficial Keras implementation of Joint Gap Detection and Inpainting of Line Drawings.
 
 ## Overview
-Joint gap for line-drawings. Model1 uses network from the paper. For stable training, BN was added for all Conv2D. Model2 uses common network for inpaint. Training code will be uploaded soon.
+Joint gap for line-drawings. Model1 uses network from the paper. For stable training, BN was added for all Conv2D. Model2 uses common network for inpaint. Training code and data will be uploaded soon.
 
 ## Dependencies
 * Keras2 (Tensorflow backend)
