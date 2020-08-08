@@ -8,12 +8,12 @@ import cv2
 from keras.models import load_model
 
 R = 2 ** 4
-MODEL_NAME = 'model1.h5'
+MODEL_NAME = './model1.h5'
 
 model = load_model(MODEL_NAME)
 model.summary()
 
-for root, dirs, files in os.walk('input', topdown=False):
+for root, dirs, files in os.walk('./input', topdown=False):
     for name in files:
         print(os.path.join(root, name))
 
@@ -25,7 +25,6 @@ for root, dirs, files in os.walk('input', topdown=False):
 
         result = model.predict(im_predict)
 
-        result = np.squeeze(result) * 255.
-        im_res = cv2.resize(result, (im.shape[1], im.shape[0]))
+        im_res = cv2.resize(result[0] * 255., (im.shape[1], im.shape[0]))
 
-        cv2.imwrite(os.path.join('output', name), im_res)
+        cv2.imwrite(os.path.join('./output', name), im_res)
